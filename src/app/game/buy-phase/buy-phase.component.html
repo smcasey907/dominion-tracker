@@ -1,0 +1,39 @@
+<mat-toolbar>
+    <div fxLayout="row">
+        <div class="remain-notice">Buys remaining: {{buysRemain}}</div> 
+        <div class="remain-notice">Coins remaining: {{coinsRemain}}</div>
+        <div class="remain-notice">Coffers: {{coffersRemain}}</div>
+        <div class="remain-notice">
+            <button mat-raised-button (click)="nextTurn()" routerLink="/main-phase" >Next Turn</button>
+        </div>
+        <div class="remain-notice">
+            <button mat-raised-button routerLink="/">Menu</button>
+        </div>
+    </div>
+</mat-toolbar>
+
+<div class="add-coins">
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button mat-fab (click)="addCopper()">1</button>
+        <button mat-fab (click)="addSilver()">2</button>
+        <button mat-fab (click)="addGold()">3</button>
+        <button mat-fab (click)="addPlatinum()">5</button>
+    </div>
+</div>
+
+<div class="buy-stuff">
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button mat-fab color="warn" (click)="payAmount(0)">0</button>
+        <button mat-fab color="warn" (click)="payAmount(1)">1</button>
+        <button mat-fab color="warn" (click)="payAmount(2)">2</button>
+        <button mat-fab color="warn" (click)="payAmount(3)">3</button>
+        <button mat-fab color="warn" (click)="payAmount(4)">4</button>
+        <button mat-fab color="warn" (click)="payAmount(5)">5</button>
+        <button mat-fab color="warn" (click)="payAmount(6)">6</button>
+        <button mat-fab color="warn" (click)="payAmount(7)">7</button>
+        <button mat-fab color="warn" (click)="payAmount(8)">8</button>
+        <button mat-fab color="warn" (click)="payAmount(9)">9</button>
+        <button mat-fab color="warn" (click)="payAmount(10)">10</button>
+        <button mat-fab color="warn" (click)="payAmount(11)">11</button>
+    </div>
+</div>

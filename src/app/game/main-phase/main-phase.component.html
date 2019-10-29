@@ -1,0 +1,40 @@
+<mat-toolbar>
+    <div fxLayout="row">
+        <div class="remain-notice">Actions remaining: {{actionsRemain}}</div>
+        <div class="remain-notice">Buys remaining: {{buysRemain}}</div> 
+        <div class="remain-notice">Coins remaining: {{coinsRemain}}</div>
+        <div class="remain-notice">Villagers: {{villagers}}</div>
+        <div class="remain-notice">Coffers: {{coffers}}</div>
+        <div class="remain-notice">Victory Points: {{victoryPoints}}</div>
+        <div class="remain-notice">
+            <button mat-raised-button (click)="updateState()" routerLink="/buy-phase">Buy Phase</button>
+        </div>
+        <div class="remain-notice">
+            <button mat-raised-button routerLink="/">Menu</button>
+        </div>
+    </div>
+</mat-toolbar>
+
+<div class="play-area" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutWrap>
+    <mat-card *ngFor="let card of gameDeck" class="game-card" (click)="playThisCard(card)">
+        <mat-card-header>
+            <mat-card-title>{{card.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngIf="card.actions">Actions: {{card.actions}}</div>
+            <div *ngIf="card.buys">Buys: {{card.buys}}</div>
+            <div *ngIf="card.coins">Coins: {{card.coins}}</div>
+            <div *ngIf="card.victory">Victory Points: {{card.victory}}</div>
+            <div *ngIf="card.villagers">Villagers: {{card.villagers}}</div>
+            <div *ngIf="card.coffers">Coffers: {{card.coffers}}</div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card class="game-card" (click)="playGenericCard()">
+        <mat-card-header>
+            <mat-card-title>Generic Action</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>This is any other card in the supply that does not provide an action, buy, coin, victory points, coffers, or villagers. Tapping this card will remove an action.</p>
+        </mat-card-content>
+    </mat-card>
+</div>
